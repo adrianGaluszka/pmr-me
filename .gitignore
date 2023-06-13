@@ -133,3 +133,6 @@ dist
 .firebase
 *-debug.log
 .runtimeconfig.json
+
+# angular cache
+.angular
