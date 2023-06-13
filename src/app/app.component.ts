@@ -20,7 +20,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   cl() {
-    this.firebase.setData();
+    // this.firebase.setData();
   }
 
   end() {
