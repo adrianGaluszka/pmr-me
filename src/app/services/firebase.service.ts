@@ -11,13 +11,13 @@ export class FirebaseService {
   constructor(private db: AngularFireDatabase) { }
 
   setData(data: MapPin): void {
-    this.db.object('pins').set(data)
-    this.db.object('pins').valueChanges()
+    // this.db.object('pins').set(data)
+    // this.db.object('pins').valueChanges()
   }
 
   getData() {
-    const databaseRef = this.db.database.ref('pins');
-    databaseRef.on('value', this.onValueCallback)
+    // const databaseRef = this.db.database.ref('pins');
+    // databaseRef.on('value', this.onValueCallback)
   }
 
   onValueCallback(snapshot: any) {
