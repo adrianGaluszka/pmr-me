@@ -1,5 +1,6 @@
 export interface MapPin {
-  xPos: number,
-  yPos: number,
+  id?: string,
+  lat: number,
+  lang: number,
   label?: string
 }
