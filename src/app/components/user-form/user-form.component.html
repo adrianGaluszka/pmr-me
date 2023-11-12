@@ -1,0 +1,11 @@
+<div class="form-wrapper">
+  <input type="text" class="name" [formControl]="name" />
+  <input type="text" class="surname" [formControl]="surname" />
+</div>
+
+{{ name.getRawValue() }}, {{ surname.getRawValue() }}
+
+<button (click)="addingMarkerLocked ? onUpdateMarker() : onAddMarker()">
+  {{ addingMarkerLocked ? "Update" : "Add" }} marker
+</button>
+<button (click)="refresh()">Refresh markers</button>

@@ -19,10 +19,6 @@ export class AppComponent implements OnInit, OnDestroy {
       this.firebase.closeStream();
   }
 
-  cl() {
-    // this.firebase.setData();
-  }
-
   end() {
     this.firebase.closeStream();
   }
