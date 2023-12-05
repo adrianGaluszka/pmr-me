@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 384.09961 538.41797"
+   version="1.1"
+   id="svg192"
+   sodipodi:docname="walkie-talkie-solid-my.svg"
+   width="384.09961"
+   height="538.41797"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs196" />
+  <sodipodi:namedview
+     id="namedview194"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     showguides="true"
+     inkscape:zoom="1.3800484"
+     inkscape:cx="118.4741"
+     inkscape:cy="263.75886"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="1072"
+     inkscape:window-y="1062"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg192">
+    <sodipodi:guide
+       position="192,314.41797"
+       orientation="1,0"
+       id="guide306"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="176.08078,56.913124"
+       orientation="0,-1"
+       id="guide1073"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+  <path
+     id="path190"
+     style="display:inline;fill:#7d0000;fill-opacity:1;stroke:none;stroke-opacity:1"
+     d="M 88,0 C 74.700013,0 64,10.700013 64,24 V 96 H 48 C 21.500027,96 0,117.50003 0,144 V 300.09961 C 0,312.7996 5.0996184,325.00001 14.099609,334 L 18,337.90039 c 8.999991,8.99999 14.099609,21.2004 14.099609,33.90039 V 481.61133 C 191.99945,481.50439 192,538.41797 192,538.41797 c 0,-56.91279 155.65234,-56.91406 155.65234,-56.91406 v -99.45899 c 0,-12.69999 9.44728,-35.04493 18.44727,-44.04492 L 370,334.09961 c 8.99999,-8.99999 14.09961,-21.2004 14.09961,-33.90039 V 144 c 0,-26.49997 -21.50003,-48 -48,-48 H 320 C 320,78.300018 305.69998,64 288,64 270.30002,64 256,78.300018 256,96 H 224 C 224,78.300018 209.69998,64 192,64 174.30002,64 160,78.300018 160,96 H 112 V 24 C 112,10.700013 101.29999,0 88,0 Z m 24,160 h 160 c 8.79999,0 16,7.20001 16,16 0,8.79999 -7.20001,16 -16,16 H 112 c -8.79999,0 -16,-7.20001 -16,-16 0,-8.79999 7.20001,-16 16,-16 z m 0,64 h 160 c 8.79999,0 16,7.20001 16,16 0,8.79999 -7.20001,16 -16,16 H 112 c -8.79999,0 -16,-7.20001 -16,-16 0,-8.79999 7.20001,-16 16,-16 z m 0,64 h 160 c 8.79999,0 16,7.20001 16,16 0,8.79999 -7.20001,16 -16,16 H 112 c -8.79999,0 -16,-7.20001 -16,-16 0,-8.79999 7.20001,-16 16,-16 z" />
+</svg>

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { FirebaseService } from './services/firebase.service';
 
 @Component({
@@ -6,14 +6,10 @@ import { FirebaseService } from './services/firebase.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit, OnDestroy {
+export class AppComponent implements OnDestroy {
   title = 'pmr-me';
 
   constructor( private firebase: FirebaseService){}
-
-  ngOnInit(): void {
-      this.firebase.getData();
-  }
 
   ngOnDestroy(): void {
       this.firebase.closeStream();

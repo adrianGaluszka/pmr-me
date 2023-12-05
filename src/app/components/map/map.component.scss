@@ -4,8 +4,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  margin: 30px;
-  width: 800px;
+  width: 100%;
   height: 500px;
 
 }
@@ -22,6 +21,13 @@
   }
   &:active {
     cursor: grab;
+  }
+}
+
+::ng-deep .leaflet-popup {
+  bottom: 20px;
+  p {
+    margin: 0 0 5px 0;
   }
 }
 

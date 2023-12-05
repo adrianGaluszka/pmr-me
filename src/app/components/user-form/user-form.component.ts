@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { LatLng } from 'leaflet';
-import { MapPin } from 'src/app/models/map-pin.interface';
+import { MapPin, MarkerDetails } from 'src/app/models/map-pin.interface';
 import { MapService } from 'src/app/services/map.service';
 
 @Component({
@@ -19,11 +19,20 @@ export class UserFormComponent {
 
   constructor(private readonly mapService: MapService){}
 
-  name = new FormControl('');
-  surname = new FormControl('');
+    name = new FormControl('');
+    freq = new FormControl('');
+    radioDetails = new FormControl('')
+
+
 
   onAddMarker() {
-    this.mapService.addMyMarker();
+    const myMarkerData: MarkerDetails = {
+      name: this.name.getRawValue() as string,
+      freq: this.freq.getRawValue() as string,
+      radioDetails: this.radioDetails.getRawValue() as string
+    }
+
+    this.mapService.addMyMarker(myMarkerData);
   }
 
   onUpdateMarker() {
@@ -31,13 +40,7 @@ export class UserFormComponent {
     const markerData: MapPin = {
       lat: this.mapService.myMarkerLat,
       lang: this.mapService.myMarkerLang,
-      // id: this.mapService.myMarkerId
     }
     this.mapService.updateMyMarker(markerData);
   }
-
-  refresh() {
-    this.mapService.refteshMarkers();
-  }
-
 }
