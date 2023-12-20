@@ -1,5 +1,6 @@
-<div class="container">
-  <button (click)="end()">Close connection</button>
-  <app-user-form></app-user-form>
-  <app-map></app-map>
+<div class="container page-wrapper">
+  <div class="row header-wrapper"><app-header></app-header></div>
+  <div class="row content-wrapper">
+    <router-outlet></router-outlet>
+  </div>
 </div>

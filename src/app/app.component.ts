@@ -14,8 +14,4 @@ export class AppComponent implements OnDestroy {
   ngOnDestroy(): void {
       this.firebase.closeStream();
   }
-
-  end() {
-    this.firebase.closeStream();
-  }
 }
