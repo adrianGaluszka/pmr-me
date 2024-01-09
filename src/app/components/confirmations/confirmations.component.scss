@@ -1,0 +1,9 @@
+.container {
+  .table-button {
+    width: 20px;
+    margin-left: 10px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

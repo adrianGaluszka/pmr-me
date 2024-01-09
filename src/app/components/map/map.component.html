@@ -1,7 +1,39 @@
-<div class="container map-container">
-  <div class="map-frame">
-    <div id="map"></div>
+<div class="container ">
+  <div class="row">
+    <div class="col-12">
+      <div class="buttons-wrapper">
+        <mat-slide-toggle [(ngModel)]="historical">Dane historyczne</mat-slide-toggle>
+        <mat-slide-toggle
+          class="live-button"
+          [(ngModel)]="live"
+        >
+          <div class="live-label">
+            Live
+            <div class="icon">
+              <div
+                class="circle--outer"
+                *ngIf="live"
+              ></div>
+              <div
+                class="circle--inner"
+                [ngClass]="{'disabled': !live}"
+              ></div>
+            </div>
+          </div>
+
+        </mat-slide-toggle>
+      </div>
+
+    </div>
   </div>
+  <div class="row map-container">
+    <div class="col-12">
+      <div class="map-frame">
+        <div id="map"></div>
+      </div>
+    </div>
+  </div>
+
 </div>
 <p>Lat: {{ markerLat }}</p>
 <p>Lang: {{ markerLang }}</p>

@@ -1,17 +1,15 @@
-import { Component, OnDestroy } from '@angular/core';
-import { FirebaseService } from './services/firebase.service';
+import { Component } from '@angular/core';
+import { WebsocketStateService } from './services/websocket-state.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnDestroy {
+export class AppComponent {
   title = 'pmr-me';
 
-  constructor( private firebase: FirebaseService){}
-
-  ngOnDestroy(): void {
-      this.firebase.closeStream();
+  constructor(private readonly websocketSate: WebsocketStateService) {
+    this.websocketSate.runAllListeners();
   }
 }

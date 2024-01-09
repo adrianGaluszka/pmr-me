@@ -1,3 +1,65 @@
+.container {
+  .buttons-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-bottom: 15px;
+    .live-button {
+      .live-label {
+        display: flex;
+        align-items: center;
+      }
+      .icon {
+        position: relative;
+        margin-left: 5px;
+        width: 20px;
+        height: 20px;
+      .circle--outer {
+        border: 1px solid #e50040;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        position: relative;
+        opacity: .8;
+        -webkit-animation: circle 2s ease-in-out infinite;
+                animation: circle 2s ease-in-out infinite;
+              }
+              .circle--inner {
+                background: #e50040;
+                left: 5px;
+                top: 5px;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                position: absolute;
+                opacity: .8;
+                &::after {
+                  content: '';
+                  display: block;
+                  border: 2px solid #e50040;
+                  border-radius: 50%;
+                  width: 14px;
+                  height: 14px;
+                  top: -2px;
+                  left: -2px;
+                  position: absolute;
+                  opacity: .8;
+                  -webkit-animation: circle 2s ease-in-out .2s infinite;
+                          animation: circle 2s ease-in-out .2s infinite;
+                }
+                &.disabled {
+                  background: #777777;
+                  &::after {
+                    content: none;
+                  }
+                }
+              }
+      }
+    }
+
+
+  }
+}
 .map-container {
   // position: absolute;
   top: 0;
@@ -30,3 +92,26 @@
     margin: 0 0 5px 0;
   }
 }
+
+@-webkit-keyframes circle {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+
+  to {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+    opacity: 0; } }
+
+@keyframes circle {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    }
+
+  to {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    opacity: 0;
+    } }
+

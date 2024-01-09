@@ -7,10 +7,9 @@ import { MapService } from 'src/app/services/map.service';
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
-  styleUrls: ['./map.component.scss']
+  styleUrls: ['./map.component.scss'],
 })
 export class MapComponent implements AfterViewInit {
-
   get markerLang(): number {
     return this.mapService.myMarkerLang;
   }
@@ -23,9 +22,12 @@ export class MapComponent implements AfterViewInit {
     return this.mapService.addingMarkerLocked;
   }
 
-  constructor(private readonly mapService: MapService){}
+  live = true;
+  historical = true;
 
-   ngAfterViewInit(): void {
+  constructor(private readonly mapService: MapService) {}
+
+  ngAfterViewInit(): void {
     this.mapService.initMap();
-   }
+  }
 }

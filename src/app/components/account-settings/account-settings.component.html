@@ -1,1 +1,52 @@
-<p>account-settings works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h3 class="text-center">Ustawienia Konta</h3>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <form [formGroup]="profileForm">
+
+        <mat-form-field class="name">
+          <mat-label>Nazwa</mat-label>
+          <input
+            matInput
+            placeholder="Nazwa"
+            formControlName="name"
+            for="name"
+          >
+        </mat-form-field>
+
+        <mat-form-field class="radio">
+          <mat-label>Radio</mat-label>
+          <input
+            matInput
+            placeholder="Radio"
+            formControlName="radio"
+            for="radio"
+          >
+        </mat-form-field>
+
+        <!-- <h3 class="text-center">Moja pinezka</h3> -->
+
+        <!-- <mat-form-field class="description">
+          <mat-label>Opis</mat-label>
+          <input
+            matInput
+            placeholder="Opis"
+            formControlName="description"
+            for="description"
+          >
+        </mat-form-field> -->
+      </form>
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <button class="btn btn-primary">Zapisz</button>
+    </div>
+  </div>
+</div>

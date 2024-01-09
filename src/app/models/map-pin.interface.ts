@@ -1,13 +1,13 @@
 export interface MapPin {
-  objectId?: string,
-  id?: string,
-  lat: number,
-  lang: number,
-  label?: string
+  objectId?: string;
+  id?: string;
+  lat: number;
+  lang: number;
+  markerDetails: MarkerDetails;
 }
 
 export interface MarkerDetails {
-  name: string,
-  freq: string,
-  radioDetails: string
+  name: string;
+  freq: string;
+  radio: string;
 }
