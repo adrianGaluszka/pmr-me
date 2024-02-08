@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { map } from 'rxjs';
+import { map, Observable } from 'rxjs';
+import { AuthService } from 'src/app/auth/services/auth.service';
 import { WebsocketStateService } from 'src/app/services/websocket-state.service';
 
 @Component({
@@ -12,10 +13,21 @@ export class HeaderComponent {
   notificationsCount = this.websocketState.$confirmationsValueChanges.pipe(
     map((items) => items.length)
   );
+  isAuth: Observable<boolean>;
 
-  constructor(private readonly websocketState: WebsocketStateService) {}
+  constructor(
+    private readonly websocketState: WebsocketStateService,
+    private readonly authService: AuthService
+  ) {
+    this.isAuth = this.authService.isLoggedIn$;
+    console.log(this.isAuth);
+  }
 
   toggleMenu() {
     this.showMenu = !this.showMenu;
+  }
+
+  onLogout() {
+    this.authService.logout();
   }
 }

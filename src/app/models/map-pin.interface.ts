@@ -4,6 +4,7 @@ export interface MapPin {
   lat: number;
   lang: number;
   markerDetails: MarkerDetails;
+  disconnected?: boolean;
 }
 
 export interface MarkerDetails {

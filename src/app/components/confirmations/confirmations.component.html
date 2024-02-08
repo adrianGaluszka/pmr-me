@@ -9,6 +9,7 @@
         mat-table
         [dataSource]="dataSource"
         class="mat-elevation-z8"
+        *ngIf="dataSource; else noConfirmations"
       >
 
         <!--- Note that these columns can be defined in any order.
@@ -105,7 +106,9 @@
           *matRowDef="let row; columns: displayedColumns;"
         ></tr>
       </table>
-
+      <ng-template #noConfirmations>
+        <h2>Brak łączności do potwierdzenia</h2>
+      </ng-template>
     </div>
   </div>
 </div>

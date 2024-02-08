@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './auth/services/auth.service';
 import { WebsocketStateService } from './services/websocket-state.service';
 
 @Component({
@@ -9,7 +10,11 @@ import { WebsocketStateService } from './services/websocket-state.service';
 export class AppComponent {
   title = 'pmr-me';
 
-  constructor(private readonly websocketSate: WebsocketStateService) {
+  constructor(
+    private readonly websocketSate: WebsocketStateService,
+    private readonly authService: AuthService
+  ) {
     this.websocketSate.runAllListeners();
+    this.authService.initAuth();
   }
 }

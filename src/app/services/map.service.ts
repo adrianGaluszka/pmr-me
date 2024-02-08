@@ -37,6 +37,13 @@ export class MapService {
       iconUrl: './assets/icons/walkie-talkie-solid.svg',
     }),
   };
+  private disconnectedMarcerIcon = {
+    icon: L.icon({
+      iconSize: [24, 36],
+      iconAnchor: [12, 36],
+      iconUrl: './assets/icons/walkie-talkie-solid-gray.svg',
+    }),
+  };
   private _addingMarkerLocked: boolean = false;
 
   get addingMarkerLocked(): boolean {
@@ -135,7 +142,11 @@ export class MapService {
       const isMyMarker = markerData.id === this.myMarkerId;
       L.marker(
         [markerData.lat, markerData.lang],
-        isMyMarker ? this.myMarkerIcon : this.markerIcon
+        markerData.disconnected
+          ? this.disconnectedMarcerIcon
+          : isMyMarker
+          ? this.myMarkerIcon
+          : this.markerIcon
       )
         .bindPopup(this.createCustomPopup(markerData))
         .addTo(isMyMarker ? this.myMarkerLayer : this.markersLayer);

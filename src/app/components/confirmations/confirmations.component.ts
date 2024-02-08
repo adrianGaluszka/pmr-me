@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatTable } from '@angular/material/table';
+import { Observable } from 'rxjs';
 import { Confirmation } from 'src/app/models/confirmation.interface';
 import { WebsocketStateService } from 'src/app/services/websocket-state.service';
 
@@ -8,7 +9,7 @@ import { WebsocketStateService } from 'src/app/services/websocket-state.service'
   templateUrl: './confirmations.component.html',
   styleUrls: ['./confirmations.component.scss'],
 })
-export class ConfirmationsComponent implements OnInit {
+export class ConfirmationsComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = [
     'name',
     'date',
@@ -22,7 +23,9 @@ export class ConfirmationsComponent implements OnInit {
 
   @ViewChild(MatTable) table!: MatTable<Confirmation>;
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  ngAfterViewInit(): void {
     this.websocketState.$confirmationsValueChanges.subscribe((res) => {
       console.log('NOTIFICATIONS:', res);
       this.dataSource = res;

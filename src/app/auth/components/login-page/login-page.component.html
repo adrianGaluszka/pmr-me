@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row">
+    <h1 class="text-center">{{loginMode ? 'Logowanie' : 'Rejestracja'}}</h1>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-5">
+      <form class="login-form">
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            placeholder="Adres Email"
+            [(ngModel)]="email"
+            name="email"
+          >
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Hasło</mat-label>
+          <input
+            matInput
+            password
+            placeholder="Hasło"
+            [(ngModel)]="password"
+            name="haslo"
+          >
+        </mat-form-field>
+        <mat-form-field *ngIf="!loginMode">
+          <mat-label>Powtórz hasło</mat-label>
+          <input
+            matInput
+            password
+            placeholder="Powtórz hasło"
+            [(ngModel)]="confirmPassword"
+            name="powtorz haslo"
+          >
+        </mat-form-field>
+      </form>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div
+      class="col-5 d-flex justify-content-between align-items-center"
+      *ngIf="loginMode; else registerPage"
+    >
+      <button
+        class="btn btn-primary"
+        (click)="onLogin()"
+        [disabled]="!email || !password"
+      >Zaloguj</button>
+      <p class="m-0">Lub jeżeli nie posiadasz konta <a routerLink="/rejestracja">Zarejestruj się</a>.</p>
+
+    </div>
+  </div>
+</div>
+
+<ng-template #registerPage>
+  <div class="col-5 d-flex justify-content-between align-items-center">
+    <button
+      class="btn btn-primary"
+      (click)="onRegister()"
+      [disabled]="!email || !password || !confirmPassword"
+    >Zarejestruj</button>
+    <p class="m-0">Lub jeżeli posiadasz konto <a routerLink="/logowanie">Zaloguj się</a>.</p>
+
+  </div>
+</ng-template>

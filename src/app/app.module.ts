@@ -4,8 +4,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-// import { environment } from 'src/environments/environment';
-// import { AngularFireModule } from '@angular/fire/compat';
 import { MapComponent } from './components/map/map.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { CommonModule } from '@angular/common';
@@ -25,6 +23,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { CustomMapPopupComponent } from './components/map/additional-components/custom-map-popup/custom-map-popup.component';
 import { ConfirmConnectionInitializationComponent } from './components/map/additional-components/confirm-connection-initialization/confirm-connection-initialization.component';
 import { MatBadgeModule } from '@angular/material/badge';
+import { LoginPageComponent } from './auth/components/login-page/login-page.component';
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { MatBadgeModule } from '@angular/material/badge';
     InformationsComponent,
     CustomMapPopupComponent,
     ConfirmConnectionInitializationComponent,
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,8 @@ import { MatBadgeModule } from '@angular/material/badge';
     MatBadgeModule,
     ReactiveFormsModule,
     HttpClientModule,
-    // AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

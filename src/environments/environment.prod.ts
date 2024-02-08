@@ -1,13 +1,14 @@
 export const environment = {
-  // firebase: {
-  //   projectId: 'pmr-me',
-  //   appId: '1:637125649251:web:c2edc3b76953466b8be956',
-  //   databaseURL: 'https://pmr-me-default-rtdb.europe-west1.firebasedatabase.app',
-  //   storageBucket: 'pmr-me.appspot.com',
-  //   apiKey: 'AIzaSyB2PEvtTE_-z8sEU9Vanah0sEUKAxzjjdI',
-  //   authDomain: 'pmr-me.firebaseapp.com',
-  //   messagingSenderId: '637125649251',
-  //   measurementId: 'G-KRH5DWS8Y9',
-  // },
   production: true,
+  firebaseConfig: {
+    apiKey: 'AIzaSyB_Hg6RTKAMVuSkPYG6_M00AshzYKTaQFk',
+    authDomain: 'pmr-me-43dae.firebaseapp.com',
+    databaseURL:
+      'https://pmr-me-43dae-default-rtdb.europe-west1.firebasedatabase.app',
+    projectId: 'pmr-me-43dae',
+    storageBucket: 'pmr-me-43dae.appspot.com',
+    messagingSenderId: '1006263787731',
+    appId: '1:1006263787731:web:79bdbb984f900e0d82b426',
+    measurementId: 'G-K3FGYLVQ5K',
+  },
 };

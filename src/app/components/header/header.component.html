@@ -13,32 +13,42 @@
       </a>
     </div>
     <div class="col-4">
-      <div class="navigation-wrapper">
-        <ul class="navigation">
-          <li>
-            <a
-              routerLink="/potwierdzenia"
-              [matBadge]="notificationsCount | async"
-            >Potwierdzenia</a>
-          </li>
-          <li><a routerLink="/informacje">Informacje</a></li>
-          <li (click)="toggleMenu()">
-            <p>Menu</p>
-            <ul
-              *ngIf="showMenu"
-              class="menu-wrapper"
-            >
-              <li>
-                <a routerLink="/historia-lacznosci">Historia łączności</a>
-              </li>
-              <li><a class="incomming">Ranking</a></li>
-              <hr />
-              <li><a routerLink="/konto">Konto</a></li>
-              <li><a>Zaloguj/Wyloguj</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+      <ng-container>
+        <div class="navigation-wrapper">
+          <ul class="navigation">
+            <li *ngIf="isAuth | async">
+              <a
+                routerLink="/potwierdzenia"
+                [matBadge]="notificationsCount | async"
+              >Potwierdzenia</a>
+            </li>
+            <li><a routerLink="/informacje">Informacje</a></li>
+            <li (click)="toggleMenu()">
+              <p>Menu</p>
+              <ul
+                *ngIf="showMenu"
+                class="menu-wrapper"
+              >
+                <li *ngIf="isAuth | async">
+                  <a routerLink="/historia-lacznosci">Historia łączności</a>
+                </li>
+                <li><a class="incomming">Ranking</a></li>
+                <hr />
+                <li *ngIf="isAuth | async"><a routerLink="/konto">Konto</a></li>
+                <li><a
+                    *ngIf="(isAuth | async); else notAuth"
+                    (click)="onLogout()"
+                  >Wyloguj</a>
+                  <ng-template #notAuth>
+                    <a routerLink="/logowanie">Zaloguj</a>
+                  </ng-template>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </ng-container>
+
     </div>
   </div>
 </div>
